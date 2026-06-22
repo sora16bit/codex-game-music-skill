@@ -8,11 +8,14 @@ This is an experimental v0.1 release focused on MIDI-first game music prototypin
 
 ## Demo
 
-Add the demo video here after uploading it to GitHub releases, GitHub user attachments, YouTube, or X.
 
-```md
-https://github.com/user-attachments/assets/your-demo-video-id
-```
+White_snow : https://github.com/user-attachments/assets/3f21145a-561a-4501-afcd-d1fe7f8d4ef8
+
+Palm : https://github.com/user-attachments/assets/9b613e45-158d-4228-b184-94aed9c2b2b0
+
+caravan : https://github.com/user-attachments/assets/4684707e-872c-4910-bd1f-950ac8bac3b2
+
+
 
 The v0.1 demo was generated from three short Japanese prompts:
 
