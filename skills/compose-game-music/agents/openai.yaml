@@ -1,0 +1,4 @@
+interface:
+  display_name: "Compose Game Music"
+  short_description: "Create, critique, and integrate game music and SFX"
+  default_prompt: "Use $compose-game-music to create, critique, or improve music and SFX for this game scene."
