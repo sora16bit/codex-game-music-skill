@@ -1,6 +1,6 @@
 # Demo Map
 
-Use this table in the GitHub README or release notes. v0.1 demos are field/exploration examples, not proof of the full battle/boss workflow yet.
+Use this table in the GitHub README or release notes. v0.1 demos include field/exploration examples plus early battle and final boss MIDI tests.
 
 | English Prompt | Original Prompt | Output MIDI | Scene Name | Demo Caption |
 | --- | --- | --- | --- | --- |
@@ -8,13 +8,14 @@ Use this table in the GitHub README or release notes. v0.1 demos are field/explo
 | `Create snowfield exploration music as editable MIDI.` | `雪国` | `white_horizon_snowfield.mid` | White Horizon Snowfield | Snowfield loop: wide bell motif, distant strings, slow bass, open cold space. |
 | `Create tropical coast music as editable MIDI.` | `南国` | `palm_lantern_coast_tropical.mid` | Palm Lantern Coast | Tropical coast loop: flute lead, marimba motion, offbeat guitar, island percussion. |
 | `Create active battle music as editable MIDI, without relying on default snare/backbeat tension.` | - | `iron_vow_skirmish_battle.mid` | Iron Vow Skirmish | Experimental battle loop: brass motif collision, bass engine, string stabs, high threat counterline, low tom pressure. |
+| `Create final boss battle music for a Demon King in a volcano as editable MIDI.` | - | `volcanic_demon_king_final_boss.mid` | Volcanic Demon King | Experimental final boss loop: demon king brass motif, lava bass engine, doom choir plane, volcanic stabs, ritual impacts. |
 
 ## README Snippet
 
 ```md
 ## Showcase
 
-These v0.1 field/exploration demos were exported as editable multi-track MIDI.
+These v0.1 demos were exported as editable multi-track MIDI.
 
 | Prompt | MIDI | Notes |
 | --- | --- | --- |
@@ -22,16 +23,19 @@ These v0.1 field/exploration demos were exported as editable multi-track MIDI.
 | `Create snowfield exploration music as editable MIDI.` | `examples/midi/white_horizon_snowfield.mid` | Snowfield exploration loop with bell motif, strings, and wide cold space. |
 | `Create tropical coast music as editable MIDI.` | `examples/midi/palm_lantern_coast_tropical.mid` | Tropical coast loop with flute, marimba, offbeat guitar, and island percussion. |
 | `Create active battle music as editable MIDI, without relying on default snare/backbeat tension.` | `examples/midi/iron_vow_skirmish_battle.mid` | Experimental battle loop with motif collision, bass pressure, string stabs, and low tom impacts. |
+| `Create final boss battle music for a Demon King in a volcano as editable MIDI.` | `examples/midi/volcanic_demon_king_final_boss.mid` | Experimental final boss loop with demon king motif, lava bass, choir-like mass, volcanic stabs, and ritual impacts. |
 ```
 
 ## Social Post Snippet
 
 ```text
-I tested a Codex field-music skill with three simple scene prompts:
+I tested a Codex game-music skill with five simple scene prompts:
 
 - desert field
 - snowfield exploration
 - tropical coast
+- active battle
+- final boss battle in a volcano
 
 It generated editable multi-track MIDI files that play directly in Midiano.
 ```

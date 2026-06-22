@@ -44,7 +44,7 @@ Use [references/output-contracts.md](references/output-contracts.md) whenever th
 
 ## Bundled Scripts
 
-Use [scripts/render_demo_mids.py](scripts/render_demo_mids.py) as a deterministic, dependency-free Standard MIDI writer for the bundled demos and for quick validation of MIDI-first output. It writes field/exploration examples plus an experimental active battle test using only Python's standard library.
+Use [scripts/render_demo_mids.py](scripts/render_demo_mids.py) as a deterministic, dependency-free Standard MIDI writer for the bundled demos and for quick validation of MIDI-first output. It writes field/exploration examples plus active battle and final boss tests using only Python's standard library.
 
 Prefer adapting this script when the user asks for a quick playable `.mid` prototype and no project-specific renderer exists. For production audio, still prefer DAW/SoundFont/rendered stems when quality matters.
 

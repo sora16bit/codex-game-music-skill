@@ -1,4 +1,4 @@
-# Codex Field Music Skill
+# Codex Game Music Skill
 
 
 https://github.com/user-attachments/assets/6a03868d-7283-422a-9c81-0bfcf23cc357
@@ -6,11 +6,11 @@ https://github.com/user-attachments/assets/6a03868d-7283-422a-9c81-0bfcf23cc357
 
 Languages: English | [日本語](README.ja.md)
 
-A Codex skill for composing editable field/exploration BGM as multi-track MIDI.
+A Codex skill for composing editable game BGM as multi-track MIDI.
 
-Ask in natural language. Codex translates game-field prompts like `desert field`, `snowfield`, or `tropical coast` into composition briefs, loop plans, and playable `.mid` files for Midiano, MuseScore, LMMS, DAWs, and game-audio pipelines.
+Ask in natural language. Codex translates game-scene prompts like `desert field`, `snowfield`, `tropical coast`, `active battle`, or `final boss battle` into composition briefs, loop plans, and playable `.mid` files for Midiano, MuseScore, LMMS, DAWs, and game-audio pipelines.
 
-This is an experimental v0.1 release focused on MIDI-first field music prototyping. Battle, boss, town, dungeon, and adaptive music workflows exist in the skill design. The main public v0.1 demos focus on exploration/field BGM, with one early battle test included separately.
+This is an experimental v0.1 release focused on MIDI-first game music prototyping. The strongest tested area is still field/exploration BGM, but v0.1 now includes active battle and final boss battle MIDI tests.
 
 ## Demo
 
@@ -48,14 +48,22 @@ This one is included as a test of whether the skill can move beyond field BGM. T
 | --- | --- | --- | --- |
 | `Create active battle music as editable MIDI, without relying on default snare/backbeat tension.` | `examples/midi/iron_vow_skirmish_battle.mid` | Iron Vow Skirmish | Active battle loop with brass motif collision, distorted bass engine, string stabs, high threat counterline, and tom-driven pressure. |
 
+### Final Boss Battle Test
+
+This one tests a more specific high-stakes game scene: a Demon King final boss battle inside a volcano.
+
+| Prompt | MIDI | Scene | Notes |
+| --- | --- | --- | --- |
+| `Create final boss battle music for a Demon King in a volcano as editable MIDI.` | `examples/midi/volcanic_demon_king_final_boss.mid` | Volcanic Demon King | 32-bar final boss loop with demon king brass motif, lava bass engine, doom choir plane, volcanic string stabs, high heat threat, and ritual lava impacts. |
+
 ## What Makes It Different
 
 This is not just a folder of prompts.
 
-`compose-game-music` is a Codex-first music workflow. The agent translates a game field scene into musical jobs, chooses a deliverable format, designs motif/form/bass/harmony/layers, and can produce editable MIDI-oriented handoff data.
+`compose-game-music` is a Codex-first music workflow. The agent translates a game scene into musical jobs, chooses a deliverable format, designs motif/form/bass/harmony/layers, and can produce editable MIDI-oriented handoff data.
 
 - **MIDI-first**: outputs are editable, inspectable, remixable, and DAW-friendly.
-- **Field-scene aware**: prompts are treated as gameplay places and player movement, not only moods.
+- **Game-scene aware**: prompts are treated as gameplay situations, not only moods.
 - **Loop-oriented**: the skill considers phrase form, loop return, SFX space, and fatigue.
 - **Adaptive-ready**: designs can be split into base, bass, harmony, lead, danger, reward, and texture layers.
 - **Codex-native**: built as a reusable agent skill with references, output contracts, and implementation guidance.
@@ -139,6 +147,54 @@ Suggested use:
 - island exploration
 - light adventure field loop
 
+### Active Battle: Iron Vow Skirmish
+
+Prompt:
+
+```text
+Create active battle music as editable MIDI, without relying on default snare/backbeat tension.
+```
+
+Output:
+
+- Multi-track MIDI
+- Brass-like motif collision
+- Distorted bass engine
+- String stabs
+- High threat counterline
+- Low tom pressure instead of default snare/backbeat
+
+Suggested use:
+
+- active encounter
+- tactical combat prototype
+- combat-system music test
+
+### Final Boss: Volcanic Demon King
+
+Prompt:
+
+```text
+Create final boss battle music for a Demon King in a volcano as editable MIDI.
+```
+
+Output:
+
+- Multi-track MIDI
+- 32-bar final boss loop
+- Demon King brass motif
+- Lava bass engine
+- Doom choir plane
+- Volcanic string stabs
+- Ritual lava impacts
+
+Suggested use:
+
+- final boss battle
+- demon king encounter
+- volcano / lava arena
+- phase-based boss prototype
+
 ## How It Works
 
 1. The user asks Codex for game music in natural language.
@@ -153,7 +209,7 @@ The skill is the music-direction and composition workflow. MIDI files remain edi
 
 - Field and exploration BGM
 - Scene-aware MIDI composition sketches
-- Experimental active battle MIDI tests
+- Active battle and final boss MIDI tests
 - Town, shop, menu, victory, failure, and title cue plans
 - Dungeon, horror, chase, battle, boss, and final-battle design guidance
 - MIDI-like JSON and standard `.mid` handoff
@@ -161,7 +217,7 @@ The skill is the music-direction and composition workflow. MIDI files remain edi
 - Unity/Godot loop and stem integration plans
 - Gameplay SFX direction for UI, tools, impacts, warnings, victory, and failure
 
-The strongest tested area in v0.1 is exploration/field BGM. Combat has one early public MIDI test. Boss, dungeon, and adaptive systems are documented as workflows, but need more public examples before being presented as proven output.
+The strongest tested area in v0.1 is exploration/field BGM. Combat and final boss battle now have early public MIDI tests. Dungeon, town, and adaptive systems are documented as workflows, but need more public examples before being presented as proven output.
 
 ## Install
 
@@ -245,6 +301,7 @@ codex-game-music-skill/
       white_horizon_snowfield.mid
       palm_lantern_coast_tropical.mid
       iron_vow_skirmish_battle.mid
+      volcanic_demon_king_final_boss.mid
     prompts.md
     listening-notes.md
     scripts/
@@ -260,15 +317,16 @@ examples/midi/mirage_caravan_short.mid
 examples/midi/white_horizon_snowfield.mid
 examples/midi/palm_lantern_coast_tropical.mid
 examples/midi/iron_vow_skirmish_battle.mid
+examples/midi/volcanic_demon_king_final_boss.mid
 ```
 
 MIDI playback quality depends on the sound source. For better output, load the `.mid` into a DAW or SoundFont player, assign better instruments, then render to `.wav` or `.ogg`.
 
 ## Roadmap
 
-- **v0.1**: Codex skill, output contracts, and field/exploration MIDI demos.
-- **v0.2**: stronger bundled MIDI generation scripts and more field presets.
-- **v0.3**: battle, boss, dungeon, town, and menu MIDI examples.
+- **v0.1**: Codex skill, output contracts, field/exploration demos, active battle test, and final boss test.
+- **v0.2**: stronger bundled MIDI generation scripts and more scene presets.
+- **v0.3**: dungeon, town, menu, victory, failure, and adaptive MIDI examples.
 - **v0.4**: Godot, Unity, and browser-game handoff templates.
 - **v0.5**: SoundFont rendering path and rendered-loop examples.
 - **v1.0**: plugin package with installable marketplace metadata.
@@ -277,7 +335,7 @@ MIDI playback quality depends on the sound source. For better output, load the `
 
 Experimental.
 
-This project is currently best understood as a field/exploration BGM assistant for game jams, prototypes, composition sketches, and editable MIDI handoff. It is not a replacement for a composer, DAW, orchestration, mixing, mastering, or licensed sound libraries.
+This project is currently best understood as a MIDI-first game BGM assistant for game jams, prototypes, composition sketches, and editable MIDI handoff. It is not a replacement for a composer, DAW, orchestration, mixing, mastering, or licensed sound libraries.
 
 ## Author
 

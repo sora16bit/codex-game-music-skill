@@ -401,11 +401,114 @@ def make_battle():
     write_midi(MIDI_DIR / "iron_vow_skirmish_battle.mid", tracks)
 
 
+def make_volcano_demon_king():
+    title = "Volcanic Demon King"
+    bpm = 168
+
+    boss = []
+    boss_cells = [
+        [("D5", 0.5, 0.92), ("Eb5", 0.5, 0.88), ("A5", 0.5, 0.94), ("G5", 0.5, 0.86)],
+        [("F5", 0.5, 0.86), ("A5", 0.5, 0.90), ("C6", 0.5, 0.92), ("Bb5", 0.5, 0.86)],
+        [("D6", 0.375, 0.94), ("C6", 0.375, 0.86), ("A5", 0.375, 0.88), ("G5", 0.375, 0.82)],
+        [("Eb5", 0.5, 0.92), ("A5", 0.5, 0.96), ("Bb5", 0.5, 0.92), ("D6", 0.5, 0.98)],
+    ]
+    for block in range(8):
+        base_bar = block * 4 + 1
+        cell = boss_cells[block % len(boss_cells)]
+        for i, (note, dur, vel) in enumerate(cell):
+            boss.append({"bar": base_bar, "beat": 1 + i * 0.5, "dur": dur, "note": note, "vel": vel})
+        boss.extend([
+            {"bar": base_bar + 1, "beat": 1.0, "dur": 0.5, "note": "D5", "vel": 0.86},
+            {"bar": base_bar + 1, "beat": 1.5, "dur": 0.5, "note": "F5", "vel": 0.84},
+            {"bar": base_bar + 1, "beat": 2.0, "dur": 0.5, "note": "A5", "vel": 0.88},
+            {"bar": base_bar + 1, "beat": 3.0, "dur": 1.0, "note": "Eb5" if block % 2 == 0 else "C6", "vel": 0.86},
+        ])
+        if block >= 4:
+            boss.extend([
+                {"bar": base_bar + 2, "beat": 1.0, "dur": 0.25, "note": "A5", "vel": 0.92},
+                {"bar": base_bar + 2, "beat": 1.5, "dur": 0.25, "note": "Bb5", "vel": 0.88},
+                {"bar": base_bar + 2, "beat": 2.0, "dur": 0.25, "note": "C6", "vel": 0.92},
+                {"bar": base_bar + 2, "beat": 2.5, "dur": 0.25, "note": "Eb6", "vel": 0.96},
+            ])
+        boss.extend([
+            {"bar": base_bar + 3, "beat": 3.0, "dur": 0.5, "note": "C5", "vel": 0.78},
+            {"bar": base_bar + 3, "beat": 3.5, "dur": 0.5, "note": "Eb5", "vel": 0.82},
+            {"bar": base_bar + 3, "beat": 4.0, "dur": 0.5, "note": "D5", "vel": 0.88},
+        ])
+
+    bass = []
+    bass_patterns = [
+        ["D2", "A1", "D2", "Eb2", "D2", "A1", "C2", "A1"],
+        ["Bb1", "F2", "Bb1", "A1", "G1", "D2", "A1", "D2"],
+        ["D2", "Eb2", "F2", "A1", "D2", "C2", "A1", "D2"],
+        ["G1", "D2", "Bb1", "A1", "Eb2", "D2", "A1", "D2"],
+    ]
+    for bar in range(1, 33):
+        pattern = bass_patterns[(bar - 1) % len(bass_patterns)]
+        for step, note in enumerate(pattern):
+            bass.append({"bar": bar, "beat": 1 + step * 0.5, "dur": 0.34, "note": note, "vel": 0.94 if step in (0, 3, 6) else 0.72})
+
+    choir = []
+    chords = [
+        ("D3", "A3", "Eb4"), ("D3", "F3", "A3"), ("Bb2", "F3", "A3"), ("A2", "Eb3", "G3"),
+        ("D3", "A3", "D4"), ("C3", "G3", "Bb3"), ("Bb2", "F3", "D4"), ("A2", "Eb3", "C4"),
+    ]
+    for bar in range(1, 33):
+        chord = chords[(bar - 1) % len(chords)]
+        for note in chord:
+            choir.append({"bar": bar, "beat": 1.0, "dur": 3.75, "note": note, "vel": 0.44 if bar < 17 else 0.54})
+
+    strings = []
+    for bar in range(1, 33):
+        stab_notes = chords[(bar - 1) % len(chords)]
+        for beat in [1.0, 2.5, 3.5]:
+            for note in stab_notes:
+                strings.append({"bar": bar, "beat": beat, "dur": 0.28, "note": note, "vel": 0.56 if beat == 1.0 else 0.45})
+
+    heat = []
+    for bar in range(1, 33):
+        if bar % 4 in (2, 0):
+            heat.extend([
+                {"bar": bar, "beat": 2.0, "dur": 0.5, "note": "A6", "vel": 0.44},
+                {"bar": bar, "beat": 2.5, "dur": 0.5, "note": "Bb6", "vel": 0.40},
+                {"bar": bar, "beat": 3.0, "dur": 0.75, "note": "Eb7", "vel": 0.46},
+            ])
+        if bar in (16, 24, 32):
+            heat.extend([
+                {"bar": bar, "beat": 3.0, "dur": 0.25, "note": "D7", "vel": 0.62},
+                {"bar": bar, "beat": 3.5, "dur": 0.25, "note": "Eb7", "vel": 0.64},
+                {"bar": bar, "beat": 4.0, "dur": 0.25, "note": "A7", "vel": 0.70},
+            ])
+
+    hits = []
+    for bar in range(1, 33):
+        for beat, pitch, vel in [(1.0, 41, 104), (2.5, 45, 78), (3.5, 47, 68), (4.0, 41, 82)]:
+            hits.append({"bar": bar, "beat": beat, "pitch": pitch, "vel": vel if bar < 17 else min(118, vel + 10), "dur": 0.12})
+        if bar % 4 == 0:
+            hits.append({"bar": bar, "beat": 4.0, "pitch": 49, "vel": 90, "dur": 0.5})
+        if bar in (8, 16, 24, 32):
+            hits.append({"bar": bar, "beat": 4.5, "pitch": 57, "vel": 92, "dur": 0.35})
+
+    tracks = [
+        conductor(title, bpm, "Final boss battle against a Demon King in a volcano. D Phrygian/diminished color, motif collision, lava pressure, unresolved loop."),
+        music_track("Demon King Brass Motif", 0, 61, boss, volume=112, pan=66, reverb=40, chorus=8),
+        music_track("Lava Bass Engine", 1, 38, bass, volume=110, pan=50, reverb=14, chorus=4),
+        music_track("Doom Choir Plane", 2, 52, choir, volume=82, pan=64, reverb=72, chorus=20),
+        music_track("Volcanic String Stabs", 3, 48, strings, volume=88, pan=70, reverb=42, chorus=10),
+        music_track("High Heat Threat", 4, 80, heat, volume=76, pan=84, reverb=48, chorus=16),
+        percussion_track("Ritual Lava Impacts", hits, volume=110, reverb=28),
+    ]
+    MIDI_DIR.mkdir(parents=True, exist_ok=True)
+    write_midi(MIDI_DIR / "volcanic_demon_king_final_boss.mid", tracks)
+
+
 if __name__ == "__main__":
     MIDI_DIR.mkdir(parents=True, exist_ok=True)
     make_snowfield()
     make_tropical()
     make_battle()
+    make_volcano_demon_king()
     print(MIDI_DIR / "white_horizon_snowfield.mid")
     print(MIDI_DIR / "palm_lantern_coast_tropical.mid")
     print(MIDI_DIR / "iron_vow_skirmish_battle.mid")
+    print(MIDI_DIR / "volcanic_demon_king_final_boss.mid")

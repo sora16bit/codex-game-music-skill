@@ -1,6 +1,6 @@
 # Prompts
 
-These v0.1 examples focus on field/exploration BGM. They were originally generated from short Japanese scene prompts, then documented with English prompts for reproducibility.
+These v0.1 examples include field/exploration BGM plus early battle and final boss tests. The field examples were originally generated from short Japanese scene prompts, then documented with English prompts for reproducibility.
 
 ## Desert
 
@@ -108,3 +108,30 @@ Listening notes:
 - Distorted bass engine.
 - String stabs and high threat counterline.
 - Low toms and impacts instead of default snare/backbeat.
+
+## Final Boss Battle Test
+
+English prompt:
+
+```text
+Create final boss battle music for a Demon King in a volcano as editable MIDI.
+```
+
+Output:
+
+- `volcanic_demon_king_final_boss.mid`
+
+Expanded prompt:
+
+```text
+Create a 32-bar final boss battle loop for a Demon King in a volcano. Use motif collision, lava-like bass pressure, choir-like mass, volcanic string stabs, high heat threat, and ritual low impacts. End unresolved so the loop returns with urgency.
+```
+
+Listening notes:
+
+- Experimental final boss battle test.
+- Demon King brass-like motif.
+- Lava bass engine.
+- Doom choir plane.
+- Volcanic string stabs.
+- High heat threat and ritual lava impacts.
