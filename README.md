@@ -1,5 +1,9 @@
 # Codex Field Music Skill
 
+
+https://github.com/user-attachments/assets/6a03868d-7283-422a-9c81-0bfcf23cc357
+
+
 Languages: English | [日本語](README.ja.md)
 
 A Codex skill for composing editable field/exploration BGM as multi-track MIDI.
