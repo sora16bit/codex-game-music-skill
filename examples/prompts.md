@@ -1,20 +1,22 @@
 # Prompts
 
-These examples were generated from short Japanese scene prompts.
+These v0.1 examples focus on field/exploration BGM. They were originally generated from short Japanese scene prompts, then documented with English prompts for reproducibility.
 
 ## Desert
 
-Prompt:
+English prompt:
 
 ```text
-砂漠
+Create desert field music as editable MIDI.
 ```
+
+Original short prompt: `砂漠`
 
 Output:
 
 - `mirage_caravan_short.mid`
 
-English description:
+Expanded prompt:
 
 ```text
 Create desert field music for a walking exploration scene.
@@ -29,17 +31,19 @@ Listening notes:
 
 ## Snowfield
 
-Prompt:
+English prompt:
 
 ```text
-雪国
+Create snowfield exploration music as editable MIDI.
 ```
+
+Original short prompt: `雪国`
 
 Output:
 
 - `white_horizon_snowfield.mid`
 
-English description:
+Expanded prompt:
 
 ```text
 Create snowfield exploration music with a wide, cold, open landscape feeling.
@@ -54,17 +58,19 @@ Listening notes:
 
 ## Tropical Coast
 
-Prompt:
+English prompt:
 
 ```text
-南国
+Create tropical coast music as editable MIDI.
 ```
+
+Original short prompt: `南国`
 
 Output:
 
 - `palm_lantern_coast_tropical.mid`
 
-English description:
+Expanded prompt:
 
 ```text
 Create tropical coast game music with a bright island exploration groove.

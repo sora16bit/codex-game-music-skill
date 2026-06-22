@@ -1,38 +1,49 @@
-# Codex Game Music Skill
+# Codex Field Music Skill
 
-A Codex skill for composing editable game BGM as multi-track MIDI.
+Languages: English | [日本語](README.ja.md)
 
-Ask in natural language. Codex translates game-scene prompts like `desert field`, `snowfield`, `tropical coast`, `town`, `dungeon`, or `boss battle` into composition briefs, loop plans, and playable `.mid` files for Midiano, MuseScore, LMMS, DAWs, and game-audio pipelines.
+A Codex skill for composing editable field/exploration BGM as multi-track MIDI.
 
-This is an experimental v0.1 release focused on MIDI-first game music prototyping.
+Ask in natural language. Codex translates game-field prompts like `desert field`, `snowfield`, or `tropical coast` into composition briefs, loop plans, and playable `.mid` files for Midiano, MuseScore, LMMS, DAWs, and game-audio pipelines.
+
+This is an experimental v0.1 release focused on MIDI-first field music prototyping. Battle, boss, town, dungeon, and adaptive music workflows exist in the skill design, but the public v0.1 demos focus on exploration/field BGM.
 
 ## Demo
 
+The v0.1 demo was generated from three short scene prompts. Each output is an editable multi-track MIDI file, then played back in Midiano.
 
-White_snow : https://github.com/user-attachments/assets/3f21145a-561a-4501-afcd-d1fe7f8d4ef8
+### Desert Field: Mirage Caravan
 
-Palm : https://github.com/user-attachments/assets/9b613e45-158d-4228-b184-94aed9c2b2b0
+https://github.com/user-attachments/assets/4684707e-872c-4910-bd1f-950ac8bac3b2
 
-caravan : https://github.com/user-attachments/assets/4684707e-872c-4910-bd1f-950ac8bac3b2
+### Snowfield: White Horizon Snowfield
 
+https://github.com/user-attachments/assets/3f21145a-561a-4501-afcd-d1fe7f8d4ef8
 
+### Tropical Coast: Palm Lantern Coast
 
-The v0.1 demo was generated from three short Japanese prompts:
+https://github.com/user-attachments/assets/9b613e45-158d-4228-b184-94aed9c2b2b0
 
 | Prompt | MIDI | Scene | Notes |
 | --- | --- | --- | --- |
-| `砂漠` | `examples/midi/mirage_caravan_short.mid` | Mirage Caravan | Desert field loop with a reed-like motif, 3+3+2 walking pulse, warm pedal bass, and sparse heat shimmer. |
-| `雪国` | `examples/midi/white_horizon_snowfield.mid` | White Horizon Snowfield | Snowfield loop with a wide bell motif, distant strings, slow bass, and cold open space. |
-| `南国` | `examples/midi/palm_lantern_coast_tropical.mid` | Palm Lantern Coast | Tropical coast loop with flute lead, marimba motion, offbeat guitar, island percussion, and warm bass. |
+| `Create desert field music as editable MIDI.` | `examples/midi/mirage_caravan_short.mid` | Mirage Caravan | Desert field loop with a reed-like motif, 3+3+2 walking pulse, warm pedal bass, and sparse heat shimmer. |
+| `Create snowfield exploration music as editable MIDI.` | `examples/midi/white_horizon_snowfield.mid` | White Horizon Snowfield | Snowfield loop with a wide bell motif, distant strings, slow bass, and cold open space. |
+| `Create tropical coast music as editable MIDI.` | `examples/midi/palm_lantern_coast_tropical.mid` | Palm Lantern Coast | Tropical coast loop with flute lead, marimba motion, offbeat guitar, island percussion, and warm bass. |
+
+Original Japanese test prompts:
+
+```text
+砂漠 / 雪国 / 南国
+```
 
 ## What Makes It Different
 
 This is not just a folder of prompts.
 
-`compose-game-music` is a Codex-first music workflow. The agent translates a game scene into musical jobs, chooses a deliverable format, designs motif/form/bass/harmony/layers, and can produce editable MIDI-oriented handoff data.
+`compose-game-music` is a Codex-first music workflow. The agent translates a game field scene into musical jobs, chooses a deliverable format, designs motif/form/bass/harmony/layers, and can produce editable MIDI-oriented handoff data.
 
 - **MIDI-first**: outputs are editable, inspectable, remixable, and DAW-friendly.
-- **Game-scene aware**: prompts are treated as gameplay situations, not only moods.
+- **Field-scene aware**: prompts are treated as gameplay places and player movement, not only moods.
 - **Loop-oriented**: the skill considers phrase form, loop return, SFX space, and fatigue.
 - **Adaptive-ready**: designs can be split into base, bass, harmony, lead, danger, reward, and texture layers.
 - **Codex-native**: built as a reusable agent skill with references, output contracts, and implementation guidance.
@@ -45,8 +56,10 @@ This is not just a folder of prompts.
 Prompt:
 
 ```text
-砂漠
+Create desert field music as editable MIDI.
 ```
+
+Original short prompt: `砂漠`
 
 Output:
 
@@ -68,8 +81,10 @@ Suggested use:
 Prompt:
 
 ```text
-雪国
+Create snowfield exploration music as editable MIDI.
 ```
+
+Original short prompt: `雪国`
 
 Output:
 
@@ -91,8 +106,10 @@ Suggested use:
 Prompt:
 
 ```text
-南国
+Create tropical coast music as editable MIDI.
 ```
+
+Original short prompt: `南国`
 
 Output:
 
@@ -121,13 +138,16 @@ The skill is the music-direction and composition workflow. MIDI files remain edi
 
 ## What It Can Generate
 
-- Exploration BGM
-- Town, shop, menu, victory, failure, and title cues
-- Dungeon, horror, chase, battle, boss, and final-battle plans
+- Field and exploration BGM
+- Scene-aware MIDI composition sketches
+- Town, shop, menu, victory, failure, and title cue plans
+- Dungeon, horror, chase, battle, boss, and final-battle design guidance
 - MIDI-like JSON and standard `.mid` handoff
 - Web Audio or Tone.js implementation guidance
 - Unity/Godot loop and stem integration plans
 - Gameplay SFX direction for UI, tools, impacts, warnings, victory, and failure
+
+The strongest tested area in v0.1 is exploration/field BGM. Combat, boss, dungeon, and adaptive systems are documented as workflows, but need more public examples before being presented as proven output.
 
 ## Install
 
@@ -180,6 +200,7 @@ Use $compose-game-music to critique why this Web Audio battle music feels thin.
 ```text
 codex-game-music-skill/
   README.md
+  README.ja.md
   LICENSE
   skills/
     compose-game-music/
@@ -225,17 +246,18 @@ MIDI playback quality depends on the sound source. For better output, load the `
 
 ## Roadmap
 
-- **v0.1**: Codex skill, output contracts, and example MIDI demos.
-- **v0.2**: bundled MIDI generation scripts and more scene presets.
-- **v0.3**: Godot, Unity, and browser-game handoff templates.
-- **v0.4**: SoundFont rendering path and rendered-loop examples.
+- **v0.1**: Codex skill, output contracts, and field/exploration MIDI demos.
+- **v0.2**: bundled MIDI generation scripts and more field presets.
+- **v0.3**: battle, boss, dungeon, town, and menu MIDI examples.
+- **v0.4**: Godot, Unity, and browser-game handoff templates.
+- **v0.5**: SoundFont rendering path and rendered-loop examples.
 - **v1.0**: plugin package with installable marketplace metadata.
 
 ## Status
 
 Experimental.
 
-This project is designed for game jams, prototypes, composition sketches, and editable MIDI handoff. It is not a replacement for a composer, DAW, orchestration, mixing, mastering, or licensed sound libraries.
+This project is currently best understood as a field/exploration BGM assistant for game jams, prototypes, composition sketches, and editable MIDI handoff. It is not a replacement for a composer, DAW, orchestration, mixing, mastering, or licensed sound libraries.
 
 ## Author
 
