@@ -42,6 +42,12 @@ Use [references/output-contracts.md](references/output-contracts.md) whenever th
 - A **stem/render brief** must include exact bars/seconds, BPM, sample rate target if known, file names, loop boundaries, gain ranges, transition rules, and SFX priority.
 - An **implementation summary** must include music brief, implemented files, adaptation model, cleanup/autoplay handling, and verification.
 
+## Bundled Scripts
+
+Use [scripts/render_demo_mids.py](scripts/render_demo_mids.py) as a deterministic, dependency-free Standard MIDI writer for the bundled demos and for quick validation of MIDI-first output. It writes field/exploration examples plus an experimental active battle test using only Python's standard library.
+
+Prefer adapting this script when the user asks for a quick playable `.mid` prototype and no project-specific renderer exists. For production audio, still prefer DAW/SoundFont/rendered stems when quality matters.
+
 ## Revision Rules For Weak Music
 
 When the user says music is weak, thin, too quiet, generic, repetitive, monotonous, not like real game music, or missing drama, treat it as a required rebuild brief. Diagnose structure, arrangement density, mix level, state changes, motif strength, and sound source before changing volume.

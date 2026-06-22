@@ -82,3 +82,29 @@ Listening notes:
 - Flute-like lead.
 - Marimba and offbeat nylon guitar.
 - Island percussion and warm bass.
+
+## Active Battle Test
+
+English prompt:
+
+```text
+Create active battle music as editable MIDI, without relying on default snare/backbeat tension.
+```
+
+Output:
+
+- `iron_vow_skirmish_battle.mid`
+
+Expanded prompt:
+
+```text
+Create a 16-bar active battle loop with motif collision, bass-driven pressure, string stabs, and tom-driven impacts. Avoid making snare/backbeat the default tension engine.
+```
+
+Listening notes:
+
+- Experimental active battle test.
+- Brass-like motif collision.
+- Distorted bass engine.
+- String stabs and high threat counterline.
+- Low toms and impacts instead of default snare/backbeat.

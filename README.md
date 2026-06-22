@@ -6,7 +6,7 @@ A Codex skill for composing editable field/exploration BGM as multi-track MIDI.
 
 Ask in natural language. Codex translates game-field prompts like `desert field`, `snowfield`, or `tropical coast` into composition briefs, loop plans, and playable `.mid` files for Midiano, MuseScore, LMMS, DAWs, and game-audio pipelines.
 
-This is an experimental v0.1 release focused on MIDI-first field music prototyping. Battle, boss, town, dungeon, and adaptive music workflows exist in the skill design, but the public v0.1 demos focus on exploration/field BGM.
+This is an experimental v0.1 release focused on MIDI-first field music prototyping. Battle, boss, town, dungeon, and adaptive music workflows exist in the skill design. The main public v0.1 demos focus on exploration/field BGM, with one early battle test included separately.
 
 ## Demo
 
@@ -36,6 +36,14 @@ Original Japanese test prompts:
 砂漠 / 雪国 / 南国
 ```
 
+### Experimental Battle Test
+
+This one is included as a test of whether the skill can move beyond field BGM. Treat it as early evidence, not a finished proof of the battle workflow.
+
+| Prompt | MIDI | Scene | Notes |
+| --- | --- | --- | --- |
+| `Create active battle music as editable MIDI, without relying on default snare/backbeat tension.` | `examples/midi/iron_vow_skirmish_battle.mid` | Iron Vow Skirmish | Active battle loop with brass motif collision, distorted bass engine, string stabs, high threat counterline, and tom-driven pressure. |
+
 ## What Makes It Different
 
 This is not just a folder of prompts.
@@ -47,6 +55,7 @@ This is not just a folder of prompts.
 - **Loop-oriented**: the skill considers phrase form, loop return, SFX space, and fatigue.
 - **Adaptive-ready**: designs can be split into base, bass, harmony, lead, danger, reward, and texture layers.
 - **Codex-native**: built as a reusable agent skill with references, output contracts, and implementation guidance.
+- **Code included**: bundled Python scripts can generate the demo Standard MIDI files without external packages.
 - **Honest about sound sources**: oscillator sketches, MIDI, SoundFonts, rendered loops, and stems are kept distinct.
 
 ## Showcase
@@ -140,6 +149,7 @@ The skill is the music-direction and composition workflow. MIDI files remain edi
 
 - Field and exploration BGM
 - Scene-aware MIDI composition sketches
+- Experimental active battle MIDI tests
 - Town, shop, menu, victory, failure, and title cue plans
 - Dungeon, horror, chase, battle, boss, and final-battle design guidance
 - MIDI-like JSON and standard `.mid` handoff
@@ -147,7 +157,7 @@ The skill is the music-direction and composition workflow. MIDI files remain edi
 - Unity/Godot loop and stem integration plans
 - Gameplay SFX direction for UI, tools, impacts, warnings, victory, and failure
 
-The strongest tested area in v0.1 is exploration/field BGM. Combat, boss, dungeon, and adaptive systems are documented as workflows, but need more public examples before being presented as proven output.
+The strongest tested area in v0.1 is exploration/field BGM. Combat has one early public MIDI test. Boss, dungeon, and adaptive systems are documented as workflows, but need more public examples before being presented as proven output.
 
 ## Install
 
@@ -223,13 +233,18 @@ codex-game-music-skill/
         score-study-workflow.md
         sfx-recipes.md
         web-audio-patterns.md
+      scripts/
+        render_demo_mids.py
   examples/
     midi/
       mirage_caravan_short.mid
       white_horizon_snowfield.mid
       palm_lantern_coast_tropical.mid
+      iron_vow_skirmish_battle.mid
     prompts.md
     listening-notes.md
+    scripts/
+      render_scene_mids.py
 ```
 
 ## Example MIDI Files
@@ -240,6 +255,7 @@ Open these in Midiano, MuseScore, LMMS, GarageBand, Logic, FL Studio, Ableton, C
 examples/midi/mirage_caravan_short.mid
 examples/midi/white_horizon_snowfield.mid
 examples/midi/palm_lantern_coast_tropical.mid
+examples/midi/iron_vow_skirmish_battle.mid
 ```
 
 MIDI playback quality depends on the sound source. For better output, load the `.mid` into a DAW or SoundFont player, assign better instruments, then render to `.wav` or `.ogg`.
@@ -247,7 +263,7 @@ MIDI playback quality depends on the sound source. For better output, load the `
 ## Roadmap
 
 - **v0.1**: Codex skill, output contracts, and field/exploration MIDI demos.
-- **v0.2**: bundled MIDI generation scripts and more field presets.
+- **v0.2**: stronger bundled MIDI generation scripts and more field presets.
 - **v0.3**: battle, boss, dungeon, town, and menu MIDI examples.
 - **v0.4**: Godot, Unity, and browser-game handoff templates.
 - **v0.5**: SoundFont rendering path and rendered-loop examples.
