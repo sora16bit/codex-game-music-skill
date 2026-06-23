@@ -4,7 +4,7 @@ Languages: [English](README.md) | 日本語
 
 Codexで、ゲームBGMを編集可能なマルチトラックMIDIとして作るためのSkillです。
 
-自然言語で依頼すると、Codexが `desert field`、`snowfield`、`tropical coast`、`active battle`、`final boss battle` のようなゲーム場面を、作曲ブリーフ、ループ設計、再生可能な `.mid` ファイルへ落とし込みます。出力したMIDIは Midiano、MuseScore、LMMS、DAW、ゲーム制作パイプラインで扱えます。
+自然言語で依頼すると、Codexが `desert field`、`snowfield`、`tropical coast`、`active battle`、`volcano final boss`、`town`、`dungeon` のようなゲーム場面を、作曲ブリーフ、ループ設計、再生可能な `.mid` ファイルへ落とし込みます。出力したMIDIは Midiano、MuseScore、LMMS、DAW、ゲーム制作パイプラインで扱えます。
 
 v0.1 は実験版です。現時点で公開デモとして確認している主な強みは、フィールド/探索BGMのMIDIプロトタイプです。加えて、通常戦闘とラストボス戦の初期テストも追加しています。
 
@@ -61,7 +61,7 @@ https://github.com/user-attachments/assets/9b613e45-158d-4228-b184-94aed9c2b2b0
 
 | Prompt | MIDI | Scene | Notes |
 | --- | --- | --- | --- |
-| `Create final boss battle music for a Demon King in a volcano as editable MIDI.` | `examples/midi/volcanic_demon_king_final_boss.mid` | Volcanic Demon King | 32小節のラストボスループ。魔王brass風モチーフ、lava bass、doom choir、火山string stabs、高域heat threat、儀式的な低音impact。 |
+| `Create editable MIDI for a final boss battle against the Demon King inside a volcano.` | `examples/midi/volcanic_demon_king_final_boss.mid` | Volcanic Demon King | 32小節のラストボスループ。魔王brass風モチーフ、lava bass、doom choir、火山string stabs、高域heat threat、儀式的な低音impact。 |
 
 ## What Makes It Different
 
@@ -111,15 +111,27 @@ cp -R ./skills/* ~/.codex/skills/
 ## Suggested Prompts
 
 ```text
-Use $compose-game-music to create desert field music as editable MIDI.
+Use $compose-game-music to create editable MIDI for 砂漠 / desert field exploration.
 ```
 
 ```text
-Use $compose-game-music to make snowfield exploration BGM for a quiet RPG area.
+Use $compose-game-music to create editable MIDI for 雪国 / quiet snowfield exploration.
 ```
 
 ```text
-Use $compose-game-music to create tropical coast music for a game jam prototype.
+Use $compose-game-music to create editable MIDI for 南国 / bright tropical coast exploration.
+```
+
+```text
+Use $compose-game-music to create editable MIDI for 火山の魔王ラスボス戦 / a final boss battle against the Demon King inside a volcano.
+```
+
+```text
+Use $compose-game-music to make boss battle music, but avoid default snare/backbeat tension.
+```
+
+```text
+Use $compose-game-music to critique why this Web Audio battle music feels thin.
 ```
 
 ## Roadmap

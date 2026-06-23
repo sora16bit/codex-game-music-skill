@@ -1,6 +1,6 @@
 # Prompts
 
-These v0.1 examples include field/exploration BGM plus early battle and final boss tests. The field examples were originally generated from short Japanese scene prompts, then documented with English prompts for reproducibility.
+These v0.1 examples include field/exploration BGM plus early battle and final boss tests. The field examples were originally generated from short Japanese scene prompts, then documented with matching English prompts for reproducibility.
 
 ## Desert
 
@@ -19,7 +19,7 @@ Output:
 Expanded prompt:
 
 ```text
-Create desert field music for a walking exploration scene.
+Create editable MIDI for desert field exploration.
 ```
 
 Listening notes:
@@ -46,7 +46,7 @@ Output:
 Expanded prompt:
 
 ```text
-Create snowfield exploration music with a wide, cold, open landscape feeling.
+Create editable MIDI for quiet snowfield exploration with a wide, cold, open landscape feeling.
 ```
 
 Listening notes:
@@ -73,7 +73,7 @@ Output:
 Expanded prompt:
 
 ```text
-Create tropical coast game music with a bright island exploration groove.
+Create editable MIDI for bright tropical coast exploration with an island groove.
 ```
 
 Listening notes:
@@ -114,8 +114,10 @@ Listening notes:
 English prompt:
 
 ```text
-Create final boss battle music for a Demon King in a volcano as editable MIDI.
+Create editable MIDI for a final boss battle against the Demon King inside a volcano.
 ```
+
+Original short prompt: `火山の魔王ラスボス戦`
 
 Output:
 
@@ -124,7 +126,7 @@ Output:
 Expanded prompt:
 
 ```text
-Create a 32-bar final boss battle loop for a Demon King in a volcano. Use motif collision, lava-like bass pressure, choir-like mass, volcanic string stabs, high heat threat, and ritual low impacts. End unresolved so the loop returns with urgency.
+Create a 32-bar final boss battle loop against the Demon King inside a volcano. Use motif collision, lava-like bass pressure, choir-like mass, volcanic string stabs, high heat threat, and ritual low impacts. End unresolved so the loop returns with urgency.
 ```
 
 Listening notes:

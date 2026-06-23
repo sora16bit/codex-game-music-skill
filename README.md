@@ -8,7 +8,7 @@ Languages: English | [日本語](README.ja.md)
 
 A Codex skill for composing editable game BGM as multi-track MIDI.
 
-Ask in natural language. Codex translates game-scene prompts like `desert field`, `snowfield`, `tropical coast`, `active battle`, or `final boss battle` into composition briefs, loop plans, and playable `.mid` files for Midiano, MuseScore, LMMS, DAWs, and game-audio pipelines.
+Ask in natural language. Codex translates game-scene prompts like `desert field`, `snowfield`, `tropical coast`, `active battle`, `volcano final boss`, `town`, or `dungeon` into composition briefs, loop plans, and playable `.mid` files for Midiano, MuseScore, LMMS, DAWs, and game-audio pipelines.
 
 This is an experimental v0.1 release focused on MIDI-first game music prototyping. The strongest tested area is still field/exploration BGM, but v0.1 now includes active battle and final boss battle MIDI tests.
 
@@ -65,7 +65,7 @@ This one tests a more specific high-stakes game scene: a Demon King final boss b
 
 | Prompt | MIDI | Scene | Notes |
 | --- | --- | --- | --- |
-| `Create final boss battle music for a Demon King in a volcano as editable MIDI.` | `examples/midi/volcanic_demon_king_final_boss.mid` | Volcanic Demon King | 32-bar final boss loop with demon king brass motif, lava bass engine, doom choir plane, volcanic string stabs, high heat threat, and ritual lava impacts. |
+| `Create editable MIDI for a final boss battle against the Demon King inside a volcano.` | `examples/midi/volcanic_demon_king_final_boss.mid` | Volcanic Demon King | 32-bar final boss loop with demon king brass motif, lava bass engine, doom choir plane, volcanic string stabs, high heat threat, and ritual lava impacts. |
 
 ## What Makes It Different
 
@@ -188,7 +188,7 @@ Suggested use:
 Prompt:
 
 ```text
-Create final boss battle music for a Demon King in a volcano as editable MIDI.
+Create editable MIDI for a final boss battle against the Demon King inside a volcano.
 ```
 
 Output:
@@ -259,15 +259,19 @@ Start a new Codex session after installation.
 ## Suggested Prompts
 
 ```text
-Use $compose-game-music to create desert field music as editable MIDI.
+Use $compose-game-music to create editable MIDI for 砂漠 / desert field exploration.
 ```
 
 ```text
-Use $compose-game-music to make snowfield exploration BGM for a quiet RPG area.
+Use $compose-game-music to create editable MIDI for 雪国 / quiet snowfield exploration.
 ```
 
 ```text
-Use $compose-game-music to create tropical coast music for a game jam prototype.
+Use $compose-game-music to create editable MIDI for 南国 / bright tropical coast exploration.
+```
+
+```text
+Use $compose-game-music to create editable MIDI for 火山の魔王ラスボス戦 / a final boss battle against the Demon King inside a volcano.
 ```
 
 ```text
